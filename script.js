@@ -1,11 +1,16 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
-let employeeData = [];
+
+// Creating an array to store the employee data
+// let employeeData = [];
 
 // Collect employee data
 const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
 
+  // Creating an array to store the employee data
+  let employeeData = [];
+  
   while (true) {
     // Prompts the user to input employee data
     const firstName = prompt("Enter first name? ");
@@ -37,23 +42,42 @@ const collectEmployees = function() {
   }
 
   return employeeData;
-}
+};
 
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
+
+  // Initialize summation of salaries
   let salarySum = 0;
+
+  // A loop that goes through the employees array and obtains the salary data
   for (let i=0; i < employeesArray.length; i++) {
-    let salarySum =+ parseFloat(employeesArray[i].salary);
+    let salarySum =+ employeesArray[i].salary;
   }
-  let avgSalary = salarySum / employeeData.length;
-  console.log(avgSalary);
-}
+
+  // Variable that stores the average salary by dividing the summation by however many employees inputted
+  let avgSalary = salarySum / employeesArray.length;
+
+  return avgSalary;
+};
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
-}
+
+  // Using the built-in Math. functions, finds a random indice in the employee array
+  let randIndex = Math.floor(Math.random() * employeesArray.length);
+
+  // Gets the random employee's data at the selected index
+  let getEmployeeFirstName = employeesArray[randIndex.firstName];
+  let getEmployeeLastName = employeesArray[randIndex.lastName];
+
+  // Variable to store the gotten data from array
+  let randEmployee = getEmployeeFirstName + " " + getEmployeeLastName;
+
+  return randEmployee;
+};
 
 /*
   ====================
