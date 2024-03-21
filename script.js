@@ -10,12 +10,12 @@ const collectEmployees = function() {
 
   // Creating an array to store the employee data
   let employeeData = [];
-  
+
   while (true) {
     // Prompts the user to input employee data
-    const firstName = prompt("Enter first name? ");
-    const lastName = prompt("Enter last name? ");
-    const salary = prompt("Enter salary? $");
+    const firstName = prompt("Enter first name: ");
+    const lastName = prompt("Enter last name: ");
+    const salary = prompt("Enter salary: ");
     
     // Check to see if they'd like to add more employees or quit program
     if (firstName === null || lastName === null || isNaN(salary)) {
@@ -27,7 +27,7 @@ const collectEmployees = function() {
     const employee = {
       firstName: firstName,
       lastName: lastName,
-      salary: `$ ${salary}`
+      salary: salary,
     };
 
     // Adds the employee's data to the end of the array
@@ -52,14 +52,14 @@ const displayAverageSalary = function(employeesArray) {
   let salarySum = 0;
 
   // A loop that goes through the employees array and obtains the salary data
-  for (let i=0; i < employeesArray.length; i++) {
-    let salarySum =+ employeesArray[i].salary;
+  for (let i = 0; i < employeesArray.length; i++) {
+    salarySum += parseFloat(employeesArray[i].salary);
   }
 
   // Variable that stores the average salary by dividing the summation by however many employees inputted
   let avgSalary = salarySum / employeesArray.length;
 
-  return avgSalary;
+  return console.log(`The average employee salary between our ${employeesArray.length} employee(s) is $${avgSalary}`);
 };
 
 // Select a random employee
@@ -70,13 +70,13 @@ const getRandomEmployee = function(employeesArray) {
   let randIndex = Math.floor(Math.random() * employeesArray.length);
 
   // Gets the random employee's data at the selected index
-  let getEmployeeFirstName = employeesArray[randIndex.firstName];
-  let getEmployeeLastName = employeesArray[randIndex.lastName];
+  let getEmployeeFirstName = employeesArray[randIndex].firstName;
+  let getEmployeeLastName = employeesArray[randIndex].lastName;
 
   // Variable to store the gotten data from array
-  let randEmployee = getEmployeeFirstName + " " + getEmployeeLastName;
+  // let randEmployee = getEmployeeFirstName + " " + getEmployeeLastName;
 
-  return randEmployee;
+  return console.log(`Congratulations to ${getEmployeeFirstName} ${getEmployeeLastName}, our random winner!`);
 };
 
 /*
