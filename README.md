@@ -6,6 +6,7 @@ I created this webpage/application to help insert and average out employee salar
 
 ## Installation
 All you have to do is access the deployed URL provided here:
+https://kushonim.github.io/employee-payroll-tracker/
 
 ## Usage
 Upon opening the webpage, you are prompted with a button to add employee information. By following the required employee data that is being asked, the program should flow reliably. One note is to make sure to only input integers/numbers into the salary section as the program will automatically format it for you.
