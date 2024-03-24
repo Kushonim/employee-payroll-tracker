@@ -73,9 +73,6 @@ const getRandomEmployee = function(employeesArray) {
   let getEmployeeFirstName = employeesArray[randIndex].firstName;
   let getEmployeeLastName = employeesArray[randIndex].lastName;
 
-  // Variable to store the gotten data from array
-  // let randEmployee = getEmployeeFirstName + " " + getEmployeeLastName;
-
   return console.log(`Congratulations to ${getEmployeeFirstName} ${getEmployeeLastName}, our random winner!`);
 };
 
